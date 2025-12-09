@@ -9,17 +9,17 @@ pipeline {
         }
         stage('Build & Test') {
             steps {
-                echo 'Running ML pipleline...'
+                echo 'Running ML pipeline...'
                 bat 'python ml_pipeline.py'
             }
         }
     }
     post {
         success {
-            echo 'Pipleline SUCCESS - Model validated'
+            echo 'Pipeline SUCCESS - Model validated'
         }
         failure {
-            echo 'Pipleline FAILED - Check logs'
+            echo 'Pipeline FAILED - Check logs'
         }
     }
 }
